@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test02</string>
+
+    <string name="lable_a">Введите A:</string>
+    <string name="lable_b">Введите B:</string>
+    <string name="lable_a_b">Результат A+B = </string>
+    <string name="calc">Считать</string>
+
+    <string name="action_settings">Настройки</string>
+</resources>

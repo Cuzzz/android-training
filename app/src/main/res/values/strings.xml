@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Test02</string>
+
+    <string name="lable_a">Enter A:</string>
+    <string name="lable_b">Enter B:</string>
+    <string name="lable_a_b">Result A+B = </string>
+    <string name="calc">Calc</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
