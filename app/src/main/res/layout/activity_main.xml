@@ -22,7 +22,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/input_a"
             android:layout_weight="2" />
 
         <TextView
@@ -34,14 +34,14 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2"
+            android:id="@+id/input_b"
             android:layout_weight="2" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calc"
-            android:id="@+id/button" />
+            android:id="@+id/calc_btn" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,8 +53,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView4"
+            android:id="@+id/result_a_b"
             android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/history_text"
+            android:lines="5" />
 
     </LinearLayout>
 </RelativeLayout>
