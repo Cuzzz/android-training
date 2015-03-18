@@ -2,11 +2,14 @@ package com.example.engineer.test02;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.internal.view.menu.MenuItemWrapperICS;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,15 +33,36 @@ public class MainActivity extends ActionBarActivity {
 
         //View.OnClickListener btnCalcLsn = ;
 
-        calcBtn.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener btnCalcLsn = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calcResult();
             }
-        });
+        };
+
+        calcBtn.setOnClickListener(btnCalcLsn);
 
     }
 
+    public void calcPopup(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.popup_calc, popupMenu.getMenu());
+
+        PopupMenu.OnMenuItemClickListener clcLsn = new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick (MenuItem item) {
+                if(item.getItemId() == R.id.popup_calc) {
+                    calcResult();
+                }
+                return false;
+            }
+        };
+
+        popupMenu.setOnMenuItemClickListener(clcLsn);
+
+        popupMenu.show();
+    }
 
     public void calcResult()
     {
@@ -89,6 +113,11 @@ public class MainActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if (id == R.id.action_clear) {
+            history.clear();
+            outHistory();
         }
 
         return super.onOptionsItemSelected(item);
